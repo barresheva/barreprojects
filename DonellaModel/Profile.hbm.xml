@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="DonellaModel"
+                   namespace="DonellaModel">
+
+  <class name="Profile" table="Profile">
+    <id name="Id" column="ID">
+      <generator class="identity"/>
+    </id>
+    <property name="UserId" />
+    <property name="FirstName" />
+    <property name="MiddleName" />
+    <property name="LastName" />
+    <property name="PhotoPath" />
+    <property name="GenderId" />
+    <property name="Location" />
+    <property name="ZipCode" />
+    <property name="EmailAddress" />
+    <property name="IsActive" />
+  </class>
+  <query name="Profile.GetProfileByUserId">
+    <![CDATA[select P from Profile P where P.UserId = :UserId and P.IsActive = 1]]>
+  </query>
+
+  <query name="Profile.SearchByName">
+    <![CDATA[select P from Profile P where (P.FirstName like :Name) OR  (P.MiddleName like :Name) OR (P.LastName like :Name) and P.IsActive = 1]]>
+  </query>
+
+  <query name="Profile.FindMatch">
+    <![CDATA[select P from Profile P where (P.Location = :location) OR (P.ZipCode = :zipcode) and P.IsActive = 1]]>
+  </query>
+
+  <query name="Profile.FindSuperMatch">
+    <![CDATA[select P from Profile P where (P.Location = :location) AND (P.ZipCode = :zipcode) and P.IsActive = 1]]>
+  </query>
+</hibernate-mapping>

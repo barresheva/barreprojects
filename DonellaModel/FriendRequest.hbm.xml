@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="DonellaModel"
+                   namespace="DonellaModel">
+
+  <class name="FriendRequest" table="FriendRequest">
+    <id name="Id" column="ID">
+      <generator class="identity"/>
+    </id>
+    <property name="FromId" />
+    <property name="ToId" />
+    <property name="StatusId" />
+  </class>
+  <query name="FriendRequest.GetRequestStatus">
+    <![CDATA[select R from FriendRequest R where (R.ToId = :UserId) AND StatusID = 1]]>
+  </query>
+  <query name="FriendRequest.AcceptedStatus">
+    <![CDATA[select R from FriendRequest R where (R.ToId = :toUserId AND R.FromId = :fromUserId) or (R.FromId = :toUserId AND R.ToId = :fromUserId) AND StatusID = 2]]>
+  </query>
+  <query name="FriendRequest.MyContacts">
+    <![CDATA[select R from FriendRequest R where (R.ToId = :userId OR R.FromId = :userId) AND StatusID = 2]]>
+  </query>
+</hibernate-mapping>
