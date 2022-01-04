@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="DonellaModel"
+                   namespace="DonellaModel">
+
+  <class name="ExceptionLogger" table="ExceptionLogger">
+    <id name="ExceptionId" column="ExceptionId">
+      <generator class="identity"/>
+    </id>
+    <property name="ExceptionMessage" />
+    <property name="ControllerName" />
+    <property name="ActionName" />
+    <property name="ExceptionStackTrack" />
+    <property name="ExceptionLogTime" />
+  </class>
+</hibernate-mapping>

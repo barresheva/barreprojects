@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="DonellaModel"
+                   namespace="DonellaModel">
+
+  <class name="ProfileVisit" table="ProfileVisit">
+    <id name="Id" column="Id">
+      <generator class="identity"/>
+    </id>
+    <property name="ByUserId" />
+    <property name="MyUserID" />
+  </class>
+  <query name="ProfileVisit.GetMyVisitors">
+    <![CDATA[select DISTINCT P from ProfileVisit P where P.MyUserID = :MyUserID ]]>
+  </query>
+</hibernate-mapping>

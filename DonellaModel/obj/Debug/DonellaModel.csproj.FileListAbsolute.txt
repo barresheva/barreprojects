@@ -1,0 +1,6 @@
+C:\Users\khali\Downloads\DonellaM-main\DonellaModel\bin\Debug\DonellaModel.dll
+C:\Users\khali\Downloads\DonellaM-main\DonellaModel\bin\Debug\DonellaModel.pdb
+C:\Users\khali\Downloads\DonellaM-main\DonellaModel\obj\Debug\DonellaModel.csprojAssemblyReference.cache
+C:\Users\khali\Downloads\DonellaM-main\DonellaModel\obj\Debug\DonellaModel.csproj.CoreCompileInputs.cache
+C:\Users\khali\Downloads\DonellaM-main\DonellaModel\obj\Debug\DonellaModel.dll
+C:\Users\khali\Downloads\DonellaM-main\DonellaModel\obj\Debug\DonellaModel.pdb

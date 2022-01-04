@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="DonellaModel"
+                   namespace="DonellaModel">
+
+  <class name="UserInfo" table="UserInfo">
+    <id name="UseID" column="ID">
+      <generator class="identity"/>
+    </id>
+    <property name="UserName" />
+    <property name="Password" />
+    <property name="RoleId" />
+    <property name="IsActive" />
+    <property name="IsProfileCreated" />
+  </class>
+  <query name="User.GetUserInfoByUserName">
+    <![CDATA[select U from UserInfo U where U.UserName = :UserName and U.IsActive = 1]]>
+  </query>
+</hibernate-mapping>
